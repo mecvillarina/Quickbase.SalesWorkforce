@@ -38,10 +38,11 @@ namespace SalesWorkforce.FunctionApp
 
             builder.Services.AddSingleton<IAccessTokenProvider, AccessTokenProvider>();
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            
+
             builder.Services.AddSingleton<ISalesAgentService, SalesAgentService>();
             builder.Services.AddSingleton<IAuthService, AuthService>();
             builder.Services.AddSingleton<ICustomerService, CustomerService>();
+            builder.Services.AddSingleton<IProductService, ProductService>();
         }
     }
 }
