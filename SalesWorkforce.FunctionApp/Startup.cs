@@ -43,6 +43,7 @@ namespace SalesWorkforce.FunctionApp
             builder.Services.AddSingleton<IAuthService, AuthService>();
             builder.Services.AddSingleton<ICustomerService, CustomerService>();
             builder.Services.AddSingleton<IProductService, ProductService>();
+            builder.Services.AddSingleton<IPurchaseOrderService, PurchaseOrderService>();
         }
     }
 }

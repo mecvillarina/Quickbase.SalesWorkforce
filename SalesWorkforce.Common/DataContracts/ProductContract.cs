@@ -13,6 +13,7 @@ namespace SalesWorkforce.Common.DataContracts
         public string Description { get; set; }
         public double BasePrice { get; set; }
         public string Unit { get; set; }
+        public List<ProductImageContract> Images { get; set; } = new List<ProductImageContract>();
 
         public ProductContract()
         {
