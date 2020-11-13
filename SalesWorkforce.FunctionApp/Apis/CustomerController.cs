@@ -18,7 +18,7 @@ namespace SalesWorkforce.FunctionApp.Apis
     public class CustomerController : AuthorizeMobileControllerBase
     {
         private readonly ICustomerService _customerService;
-        public CustomerController(IAccessTokenProvider accessTokenProvider, ICustomerService customerService) : base(accessTokenProvider)
+        public CustomerController(ISalesAgentService salesAgentService, IAccessTokenProvider accessTokenProvider, ICustomerService customerService) : base(salesAgentService, accessTokenProvider)
         {
             _customerService = customerService;
         }

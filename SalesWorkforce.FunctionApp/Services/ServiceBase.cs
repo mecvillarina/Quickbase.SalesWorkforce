@@ -41,7 +41,7 @@ namespace SalesWorkforce.FunctionApp.Services
             }
         }
 
-        public K PostRequest<T,K>(string path, T payload, Dictionary<string, string> headers = null)
+        public K PostRequest<T, K>(string path, T payload, Dictionary<string, string> headers = null)
         {
             using (HttpClient client = new HttpClient())
             {
