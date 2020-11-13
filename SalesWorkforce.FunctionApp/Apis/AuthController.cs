@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using SalesWorkforce.Common.DataContracts;
+using SalesWorkforce.Common.DataContracts.Requests;
+using SalesWorkforce.Common.DataContracts.Responses;
 using SalesWorkforce.FunctionApp.Providers.Abstractions;
 using SalesWorkforce.FunctionApp.Services.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SalesWorkforce.FunctionApp.Apis
 {

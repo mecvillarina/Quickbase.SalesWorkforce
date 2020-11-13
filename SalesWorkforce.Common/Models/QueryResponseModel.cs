@@ -8,19 +8,13 @@ namespace SalesWorkforce.Common.Models
     public class QueryResponseModel
     {
         [JsonProperty("data")]
-        public List<Dictionary<string, QueryResponseDatum>> Data { get; set; } = new List<Dictionary<string, QueryResponseDatum>>();
+        public List<Dictionary<string, Datum>> Data { get; set; } = new List<Dictionary<string, Datum>>();
 
         [JsonProperty("fields")]
         public List<QueryResponseField> Fields { get; set; } = new List<QueryResponseField>();
 
         [JsonProperty("metadata")]
         public QueryResponseMetadata Metadata { get; set; } = new QueryResponseMetadata();
-    }
-
-    public class QueryResponseDatum
-    {
-        [JsonProperty("value")]
-        public object Value { get; set; }
     }
 
     public class QueryResponseField
