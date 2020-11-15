@@ -147,17 +147,14 @@
   <data name="Error_SessionExpireTitle" xml:space="preserve">
     <value>Session Expired</value>
   </data>
-  <data name="LabelAccessCode" xml:space="preserve">
-    <value>Access Code</value>
-  </data>
   <data name="LabelAccount" xml:space="preserve">
     <value>Account</value>
   </data>
-  <data name="LabelAttendanceLogs" xml:space="preserve">
-    <value>Attendance Logs</value>
+  <data name="LabelAgentId" xml:space="preserve">
+    <value>Agent ID</value>
   </data>
-  <data name="LabelAttendanceType" xml:space="preserve">
-    <value>Attendance Type</value>
+  <data name="LabelBadgeCode" xml:space="preserve">
+    <value>Badge Code</value>
   </data>
   <data name="LabelClockIn" xml:space="preserve">
     <value>Clock In</value>
@@ -165,8 +162,8 @@
   <data name="LabelClockOut" xml:space="preserve">
     <value>Clock Out</value>
   </data>
-  <data name="LabelEmployeeID" xml:space="preserve">
-    <value>Employee ID</value>
+  <data name="LabelCustomers" xml:space="preserve">
+    <value>Customers</value>
   </data>
   <data name="LabelFirstName" xml:space="preserve">
     <value>First Name</value>
@@ -197,6 +194,9 @@
   </data>
   <data name="LabelNo" xml:space="preserve">
     <value>No</value>
+  </data>
+  <data name="LabelPurchaseOrders" xml:space="preserve">
+    <value>Purchase Orders</value>
   </data>
   <data name="LabelSignout" xml:space="preserve">
     <value>Sign out</value>

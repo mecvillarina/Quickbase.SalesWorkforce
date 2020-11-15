@@ -26,8 +26,6 @@ namespace SalesWorkforce.MobileApp.ViewModels
             Title = AppResources.TitleAccount;
             TappedMenuCommand = new DelegateCommand(() => EventAggregator.GetEvent<HamburgerTappedEvent>().Publish());
 
-            ClockInCommand = new DelegateCommand(async () => await OnClock("Clock In"));
-            ClockOutCommand = new DelegateCommand(async () => await OnClock("Clock Out"));
         }
 
 
@@ -67,16 +65,6 @@ namespace SalesWorkforce.MobileApp.ViewModels
         }
 
         public DelegateCommand TappedMenuCommand { get; private set; }
-        public DelegateCommand ClockInCommand { get; private set; }
-        public DelegateCommand ClockOutCommand { get; private set; }
-
-        private async Task OnClock(string logType)
-        {
-            var parameters = new NavigationParameters();
-            parameters.Add(NavParameters.LogType, logType);
-
-            await PageNavigator.NavigateAsync(ViewNames.ClockPage, parameters);
-        }
 
         private void SetProfile()
         {

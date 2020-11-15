@@ -83,13 +83,35 @@
 
                         <Label FontFamily="FontAwesomeSolid"
                                FontSize="{StaticResource LargeFontSize}"
-                               Text="{StaticResource IconHistory}"
+                               Text="{StaticResource IconPeople}"
                                TextColor="{StaticResource LightGrayColor}"
                                VerticalOptions="FillAndExpand"
                                VerticalTextAlignment="Center" />
 
                         <Label FontSize="{StaticResource MediumFontSize}"
-                               Text="{x:Static i18n:AppResources.LabelAttendanceLogs}"
+                               Text="{x:Static i18n:AppResources.LabelCustomers}"
+                               TextColor="{StaticResource LightGrayTextColor}"
+                               TextTransform="Uppercase"
+                               VerticalOptions="FillAndExpand"
+                               VerticalTextAlignment="Center" />
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="1"
+                                 Orientation="Horizontal"
+                                 Spacing="15">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding AttendanceLogCommmand}" />
+                        </StackLayout.GestureRecognizers>
+
+                        <Label FontFamily="FontAwesomeSolid"
+                               FontSize="{StaticResource LargeFontSize}"
+                               Text="{StaticResource IconBox}"
+                               TextColor="{StaticResource LightGrayColor}"
+                               VerticalOptions="FillAndExpand"
+                               VerticalTextAlignment="Center" />
+
+                        <Label FontSize="{StaticResource MediumFontSize}"
+                               Text="{x:Static i18n:AppResources.LabelPurchaseOrders}"
                                TextColor="{StaticResource LightGrayTextColor}"
                                TextTransform="Uppercase"
                                VerticalOptions="FillAndExpand"

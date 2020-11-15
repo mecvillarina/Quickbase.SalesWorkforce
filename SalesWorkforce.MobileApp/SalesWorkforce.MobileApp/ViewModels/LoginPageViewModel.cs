@@ -110,7 +110,7 @@ namespace SalesWorkforce.MobileApp.ViewModels
 
 #if DEBUG
             AgentId = "1000";
-            BadgeCode = "34827";
+            BadgeCode = "235346";
 #endif
         }
     }

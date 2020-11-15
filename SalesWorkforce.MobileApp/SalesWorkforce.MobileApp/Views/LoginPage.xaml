@@ -25,9 +25,9 @@
                     <StackLayout Spacing="10">
                         <StackLayout Spacing="5">
                             <Label Style="{StaticResource ControlTitleTextColor}"
-                                   Text="{x:Static i18n:AppResources.LabelEmployeeID}" />
+                                   Text="{x:Static i18n:AppResources.LabelAgentId}" />
 
-                            <Entry Text="{Binding EmployeeId}">
+                            <Entry Text="{Binding AgentId}">
                                 <Entry.Effects>
                                     <effects:NoBorderEffect />
                                 </Entry.Effects>
@@ -36,10 +36,10 @@
 
                         <StackLayout Spacing="5">
                             <Label Style="{StaticResource ControlTitleTextColor}"
-                                   Text="{x:Static i18n:AppResources.LabelAccessCode}" />
+                                   Text="{x:Static i18n:AppResources.LabelBadgeCode}" />
 
                             <Entry IsPassword="True"
-                                   Text="{Binding AccessCode}">
+                                   Text="{Binding BadgeCode}">
                                 <Entry.Effects>
                                     <effects:NoBorderEffect />
                                 </Entry.Effects>

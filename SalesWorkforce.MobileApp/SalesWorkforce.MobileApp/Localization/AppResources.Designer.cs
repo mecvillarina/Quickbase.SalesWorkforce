@@ -151,15 +151,6 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Access Code.
-        /// </summary>
-        public static string LabelAccessCode {
-            get {
-                return ResourceManager.GetString("LabelAccessCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Account.
         /// </summary>
         public static string LabelAccount {
@@ -169,20 +160,20 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Attendance Logs.
+        ///   Looks up a localized string similar to Agent ID.
         /// </summary>
-        public static string LabelAttendanceLogs {
+        public static string LabelAgentId {
             get {
-                return ResourceManager.GetString("LabelAttendanceLogs", resourceCulture);
+                return ResourceManager.GetString("LabelAgentId", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Attendance Type.
+        ///   Looks up a localized string similar to Badge Code.
         /// </summary>
-        public static string LabelAttendanceType {
+        public static string LabelBadgeCode {
             get {
-                return ResourceManager.GetString("LabelAttendanceType", resourceCulture);
+                return ResourceManager.GetString("LabelBadgeCode", resourceCulture);
             }
         }
         
@@ -205,11 +196,11 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Employee ID.
+        ///   Looks up a localized string similar to Customers.
         /// </summary>
-        public static string LabelEmployeeID {
+        public static string LabelCustomers {
             get {
-                return ResourceManager.GetString("LabelEmployeeID", resourceCulture);
+                return ResourceManager.GetString("LabelCustomers", resourceCulture);
             }
         }
         
@@ -300,6 +291,15 @@ namespace SalesWorkforce.MobileApp.Localization {
         public static string LabelNo {
             get {
                 return ResourceManager.GetString("LabelNo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase Orders.
+        /// </summary>
+        public static string LabelPurchaseOrders {
+            get {
+                return ResourceManager.GetString("LabelPurchaseOrders", resourceCulture);
             }
         }
         

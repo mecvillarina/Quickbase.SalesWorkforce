@@ -49,36 +49,13 @@
 
                     <StackLayout Spacing="5">
                         <Label Style="{StaticResource ControlTitleLabelStyle}"
-                               Text="{x:Static i18n:AppResources.LabelEmployeeID}" />
+                               Text="{x:Static i18n:AppResources.LabelAgentId}" />
 
                         <Label FontSize="{StaticResource LargeFontSize}"
                                Style="{StaticResource ControlTitleLabelStyle}"
-                               Text="{Binding EmployeeId}"
+                               Text="{Binding AgentId}"
                                TextColor="{StaticResource PrimaryColor1}" />
                     </StackLayout>
-
-                    <StackLayout Spacing="5">
-                        <Label Style="{StaticResource ControlTitleLabelStyle}"
-                               Text="{x:Static i18n:AppResources.LabelAttendanceType}" />
-
-                        <Label FontSize="{StaticResource LargeFontSize}"
-                               Style="{StaticResource ControlTitleLabelStyle}"
-                               Text="{Binding AttendanceType}"
-                               TextColor="{StaticResource PrimaryColor1}" />
-                    </StackLayout>
-
-                    <StackLayout Padding="0,10">
-                        <Button BackgroundColor="{StaticResource PrimaryColor2}"
-                                BorderColor="{StaticResource PrimaryColor2}"
-                                Command="{Binding ClockInCommand}"
-                                Text="{x:Static i18n:AppResources.LabelClockIn}" />
-
-                        <Button BackgroundColor="{StaticResource PrimaryColor3}"
-                                BorderColor="{StaticResource PrimaryColor3}"
-                                Command="{Binding ClockOutCommand}"
-                                Text="{x:Static i18n:AppResources.LabelClockOut}" />
-                    </StackLayout>
-
                 </StackLayout>
             </ScrollView>
         </Grid>

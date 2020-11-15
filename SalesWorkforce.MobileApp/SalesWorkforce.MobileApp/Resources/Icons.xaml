@@ -16,4 +16,6 @@
     <x:String x:Key="IconPlus">&#xf067;</x:String>
     <x:String x:Key="IconMinus">&#xf068;</x:String>
     <x:String x:Key="IconInfoCircle">&#xf05a;</x:String>
+    <x:String x:Key="IconPeople">&#xf0c0;</x:String>
+    <x:String x:Key="IconBox">&#xf466;</x:String>
 </ResourceDictionary>
