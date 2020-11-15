@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesWorkforce.FunctionApp", "SalesWorkforce.FunctionApp\SalesWorkforce.FunctionApp.csproj", "{3A4731D7-54AF-4145-828E-5ECA38FE9045}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesWorkforce.FunctionApp", "SalesWorkforce.FunctionApp\SalesWorkforce.FunctionApp.csproj", "{3A4731D7-54AF-4145-828E-5ECA38FE9045}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesWorkforce.Common", "SalesWorkforce.Common\SalesWorkforce.Common.csproj", "{4169A346-A3F8-431C-AF03-B6CB62CA7B03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SalesWorkforce.Common", "SalesWorkforce.Common\SalesWorkforce.Common.csproj", "{4169A346-A3F8-431C-AF03-B6CB62CA7B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesWorkforce.MobileApp", "SalesWorkforce.MobileApp\SalesWorkforce.MobileApp\SalesWorkforce.MobileApp.csproj", "{1ACCFE88-3BA8-49B6-BA27-53121F527C15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesWorkforce.MobileApp.Android", "SalesWorkforce.MobileApp\SalesWorkforce.MobileApp.Android\SalesWorkforce.MobileApp.Android.csproj", "{59F6B35C-3BAB-4787-995B-EB6E46D230AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,16 @@ Global
 		{4169A346-A3F8-431C-AF03-B6CB62CA7B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4169A346-A3F8-431C-AF03-B6CB62CA7B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4169A346-A3F8-431C-AF03-B6CB62CA7B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ACCFE88-3BA8-49B6-BA27-53121F527C15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ACCFE88-3BA8-49B6-BA27-53121F527C15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ACCFE88-3BA8-49B6-BA27-53121F527C15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ACCFE88-3BA8-49B6-BA27-53121F527C15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F6B35C-3BAB-4787-995B-EB6E46D230AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F6B35C-3BAB-4787-995B-EB6E46D230AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F6B35C-3BAB-4787-995B-EB6E46D230AB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{59F6B35C-3BAB-4787-995B-EB6E46D230AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F6B35C-3BAB-4787-995B-EB6E46D230AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F6B35C-3BAB-4787-995B-EB6E46D230AB}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

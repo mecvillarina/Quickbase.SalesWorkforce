@@ -1,10 +1,11 @@
-﻿using SalesWorkforce.Common.Models;
+﻿using SalesWorkforce.Common.Abstractions;
+using SalesWorkforce.Common.Models;
 using System;
 using System.Collections.Generic;
 
 namespace SalesWorkforce.Common.DataContracts
 {
-    public class PurchaseOrderProductContract
+    public class PurchaseOrderProductContract : IJsonDataContract
     {
         public string ProductSKU { get; set; }
         public string ProductName { get; set; }

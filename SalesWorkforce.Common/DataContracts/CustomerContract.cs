@@ -1,9 +1,10 @@
-﻿using SalesWorkforce.Common.Models;
+﻿using SalesWorkforce.Common.Abstractions;
+using SalesWorkforce.Common.Models;
 using System.Collections.Generic;
 
 namespace SalesWorkforce.Common.DataContracts
 {
-    public class CustomerContract
+    public class CustomerContract : IJsonDataContract
     {
         public long RecordId { get; set; }
         public string Name { get; set; }

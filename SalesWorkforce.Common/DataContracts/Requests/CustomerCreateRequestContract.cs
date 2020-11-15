@@ -1,6 +1,8 @@
-﻿namespace SalesWorkforce.Common.DataContracts.Requests
+﻿using SalesWorkforce.Common.Abstractions;
+
+namespace SalesWorkforce.Common.DataContracts.Requests
 {
-    public class CustomerCreateRequestContract
+    public class CustomerCreateRequestContract : IJsonDataContract
     {
         public string Name { get; set; }
         public string Address { get; set; }

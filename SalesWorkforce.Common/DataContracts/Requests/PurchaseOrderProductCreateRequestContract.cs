@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SalesWorkforce.Common.Abstractions;
 
 namespace SalesWorkforce.Common.DataContracts.Requests
 {
-    public class PurchaseOrderProductCreateRequestContract
+    public class PurchaseOrderProductCreateRequestContract : IJsonDataContract
     {
         public long ProductRecordId { get; set; }
         public double Quantity { get; set; }

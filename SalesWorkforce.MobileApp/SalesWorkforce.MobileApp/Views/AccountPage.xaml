@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MobileContentPageBase x:Class="SalesWorkforce.MobileApp.Views.AccountPage"
+                             xmlns="http://xamarin.com/schemas/2014/forms"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                             xmlns:i18n="clr-namespace:SalesWorkforce.MobileApp.Localization"
+                             xmlns:prism="http://prismlibrary.com"
+                             xmlns:views="clr-namespace:SalesWorkforce.MobileApp.Views"
+                             prism:ViewModelLocator.AutowireViewModel="True"
+                             BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+                             ControlTemplate="{StaticResource MasterDetailPageControlTemplate}">
+
+    <views:MobileContentPageBase.Content>
+        <Grid RowSpacing="0">
+            <ScrollView Margin="20,10"
+                        Padding="25"
+                        BackgroundColor="{StaticResource PrimaryBackgroundColor}">
+                <StackLayout BackgroundColor="{StaticResource PrimaryBackgroundColor}"
+                             Spacing="15">
+
+                    <StackLayout Spacing="5">
+                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{x:Static i18n:AppResources.LabelFirstName}" />
+
+                        <Label FontSize="{StaticResource LargeFontSize}"
+                               Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{Binding FirstName}"
+                               TextColor="{StaticResource PrimaryColor1}" />
+                    </StackLayout>
+
+                    <StackLayout Spacing="5">
+                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{x:Static i18n:AppResources.LabelMiddleName}" />
+
+                        <Label FontSize="{StaticResource LargeFontSize}"
+                               Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{Binding MiddleName}"
+                               TextColor="{StaticResource PrimaryColor1}" />
+                    </StackLayout>
+
+                    <StackLayout Spacing="5">
+                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{x:Static i18n:AppResources.LabelLastName}" />
+
+                        <Label FontSize="{StaticResource LargeFontSize}"
+                               Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{Binding LastName}"
+                               TextColor="{StaticResource PrimaryColor1}" />
+                    </StackLayout>
+
+                    <StackLayout Spacing="5">
+                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{x:Static i18n:AppResources.LabelEmployeeID}" />
+
+                        <Label FontSize="{StaticResource LargeFontSize}"
+                               Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{Binding EmployeeId}"
+                               TextColor="{StaticResource PrimaryColor1}" />
+                    </StackLayout>
+
+                    <StackLayout Spacing="5">
+                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{x:Static i18n:AppResources.LabelAttendanceType}" />
+
+                        <Label FontSize="{StaticResource LargeFontSize}"
+                               Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{Binding AttendanceType}"
+                               TextColor="{StaticResource PrimaryColor1}" />
+                    </StackLayout>
+
+                    <StackLayout Padding="0,10">
+                        <Button BackgroundColor="{StaticResource PrimaryColor2}"
+                                BorderColor="{StaticResource PrimaryColor2}"
+                                Command="{Binding ClockInCommand}"
+                                Text="{x:Static i18n:AppResources.LabelClockIn}" />
+
+                        <Button BackgroundColor="{StaticResource PrimaryColor3}"
+                                BorderColor="{StaticResource PrimaryColor3}"
+                                Command="{Binding ClockOutCommand}"
+                                Text="{x:Static i18n:AppResources.LabelClockOut}" />
+                    </StackLayout>
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </views:MobileContentPageBase.Content>
+</views:MobileContentPageBase>

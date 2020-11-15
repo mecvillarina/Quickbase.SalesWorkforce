@@ -1,10 +1,11 @@
-﻿using System;
+﻿using SalesWorkforce.Common.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace SalesWorkforce.Common.DataContracts
 {
-    public class ProductImageContract
+    public class ProductImageContract : IJsonDataContract
     {
     }
 }

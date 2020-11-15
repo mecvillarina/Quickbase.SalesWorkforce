@@ -1,10 +1,9 @@
-﻿using System;
+﻿using SalesWorkforce.Common.Abstractions;
 using System.Collections.Generic;
-using System.Text;
 
 namespace SalesWorkforce.Common.DataContracts.Requests
 {
-    public class PurchaseOrderCreateRequestContract
+    public class PurchaseOrderCreateRequestContract : IJsonDataContract
     {
         public long CustomerRecordId { get; set; }
 
