@@ -9,6 +9,8 @@ namespace SalesWorkforce.MobileApp.Managers.Mappers.Profiles
         public DataContractDataObjectProfile()
         {
             CreateMap<SalesAgentContract, AppUserDataObject>();
+            CreateMap<CustomerContract, CustomerDataObject>();
+            CreateMap<ProductContract, ProductDataObject>();
         }
     }
 }

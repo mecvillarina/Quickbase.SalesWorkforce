@@ -11,9 +11,17 @@ namespace SalesWorkforce.MobileApp.Managers.Mappers.Profiles
         public EntityDataContractProfile()
         {
             CreateMap<AuthLoginRequestEntity, AuthLoginRequestContract>();
+            CreateMap<CustomerCreateRequestEntity, CustomerCreateRequestContract>();
+            CreateMap<PurchaseOrderCreateRequestEntity, PurchaseOrderCreateRequestContract>();
+            CreateMap<PurchaseOrderProductCreateRequestEntity, PurchaseOrderProductCreateRequestContract>();
 
             CreateMap<AuthTokenDataContract, AuthTokenEntity>();
             CreateMap<SalesAgentContract, AppUserEntity>();
+            CreateMap<CustomerContract, CustomerEntity>();
+            CreateMap<ProductContract, ProductEntity>();
+            CreateMap<PurchaseOrderContract, PurchaseOrderEntity>();
+            CreateMap<PurchaseOrderProductContract, PurchaseOrderProductEntity>();
+
         }
     }
 }

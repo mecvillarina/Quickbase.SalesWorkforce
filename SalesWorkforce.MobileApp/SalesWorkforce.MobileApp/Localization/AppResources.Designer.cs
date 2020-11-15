@@ -205,6 +205,15 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Email Address.
+        /// </summary>
+        public static string LabelEmailAddress {
+            get {
+                return ResourceManager.GetString("LabelEmailAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to First Name.
         /// </summary>
         public static string LabelFirstName {

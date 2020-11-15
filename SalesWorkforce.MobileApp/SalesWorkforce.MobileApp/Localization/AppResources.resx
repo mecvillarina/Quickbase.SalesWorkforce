@@ -165,6 +165,9 @@
   <data name="LabelCustomers" xml:space="preserve">
     <value>Customers</value>
   </data>
+  <data name="LabelEmailAddress" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
   <data name="LabelFirstName" xml:space="preserve">
     <value>First Name</value>
   </data>

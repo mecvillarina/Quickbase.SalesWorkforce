@@ -9,6 +9,8 @@ namespace SalesWorkforce.MobileApp.Managers.Mappers.Profiles
         public EntityDataObjectProfile()
         {
             CreateMap<AppUserDataObject, AppUserEntity>();
+            CreateMap<CustomerDataObject, CustomerEntity>();
+            CreateMap<ProductDataObject, ProductEntity>();
         }
     }
 }

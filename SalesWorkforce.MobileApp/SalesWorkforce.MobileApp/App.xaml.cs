@@ -62,6 +62,9 @@ namespace SalesWorkforce.MobileApp
             containerRegistry.RegisterSingleton<IInternalAuthManager, InternalAuthManager>();
             containerRegistry.RegisterSingleton<IAuthManager, AuthManager>();
             containerRegistry.RegisterSingleton<IAppUserManager, AppUserManager>();
+            containerRegistry.RegisterSingleton<ICustomerManager, CustomerManager>();
+            containerRegistry.RegisterSingleton<IProductManager, ProductManager>();
+            containerRegistry.RegisterSingleton<IPurchaseOrderManager, PurchaseOrderManager>();
         }
 
         private void RegisterWebServices(IContainerRegistry containerRegistry)
@@ -69,6 +72,9 @@ namespace SalesWorkforce.MobileApp
             containerRegistry.Register<IHttpService, HttpService>();
             containerRegistry.Register<IAppHttpClient, AppHttpClient>();
             containerRegistry.RegisterSingleton<IAuthWebService, AuthWebService>();
+            containerRegistry.RegisterSingleton<ICustomerWebService, CustomerWebService>();
+            containerRegistry.RegisterSingleton<IProductWebService, ProductWebService>();
+            containerRegistry.RegisterSingleton<IPurchaseOrderWebService, PurchaseOrderWebService>();
         }
 
         private void RegisterRepositories(IContainerRegistry containerRegistry)
@@ -77,6 +83,8 @@ namespace SalesWorkforce.MobileApp
             containerRegistry.RegisterSingleton<IKeyStoreRepository, KeyStoreRepository>();
             containerRegistry.RegisterSingleton<IInternalAuthRepository, InternalAuthRepository>();
             containerRegistry.RegisterSingleton<IAppUserRepository, AppUserRepository>();
+            containerRegistry.RegisterSingleton<ICustomerRepository, CustomerRepository>();
+            containerRegistry.RegisterSingleton<IProductRepository, ProductRepository>();
         }
 
         private void RegisterUtilites(IContainerRegistry containerRegistry)
