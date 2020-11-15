@@ -26,7 +26,7 @@ namespace SalesWorkforce.Common.DataContracts
             LastName = data["8"].Value.ToString();
             AgentId = data["9"].Value.ToString();
             EmailAddress = data["11"].Value.ToString();
-            DisplayName = data["12"].Value.ToString();
+            DisplayName = data["15"].Value.ToString();
         }
     }
 }
