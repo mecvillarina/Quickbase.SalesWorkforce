@@ -16,6 +16,6 @@ namespace SalesWorkforce.MobileApp.Managers.Entities
         public string CustomerName { get; set; }
         public List<PurchaseOrderProductEntity> OrderedProducts { get; set; } = new List<PurchaseOrderProductEntity>();
 
-
+        public string DateRequestedDisplay => DateRequested.ToLocalTime().ToString("MM-dd-yyyy hh:mm tt");
     }
 }

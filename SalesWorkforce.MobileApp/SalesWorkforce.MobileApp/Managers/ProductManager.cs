@@ -46,10 +46,16 @@ namespace SalesWorkforce.MobileApp.Managers
             }
         }
 
-        public List<ProductEntity> GetCustomersLocally()
+        public List<ProductEntity> GetProductsLocally()
         {
             var dataObject = _productRepository.ToList();
-            return Mapper.Map<List<ProductEntity>>(dataObject);
+
+            if(dataObject != null)
+            {
+                return Mapper.Map<List<ProductEntity>>(dataObject);
+            }
+
+            return new List<ProductEntity>();
         }
 
         public async Task<ProductEntity> GetProduct(long recordId)

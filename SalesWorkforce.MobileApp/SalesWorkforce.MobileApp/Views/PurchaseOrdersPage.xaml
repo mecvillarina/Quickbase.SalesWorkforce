@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<views:MobileContentPageBase x:Class="SalesWorkforce.MobileApp.Views.CustomersPage"
+<views:MobileContentPageBase x:Class="SalesWorkforce.MobileApp.Views.PurchaseOrdersPage"
                              xmlns="http://xamarin.com/schemas/2014/forms"
                              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                              xmlns:i18n="clr-namespace:SalesWorkforce.MobileApp.Localization"
@@ -14,7 +14,7 @@
             <Grid Padding="25"
                   BackgroundColor="{StaticResource PrimaryBackgroundColor}">
                 <CollectionView BackgroundColor="{StaticResource PrimaryBackgroundColor}"
-                                ItemsSource="{Binding Customers}">
+                                ItemsSource="{Binding PurchaseOrders}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10"
                                            Orientation="Vertical" />
@@ -24,53 +24,67 @@
                         <DataTemplate>
                             <StackLayout Padding="10"
                                          BackgroundColor="{StaticResource SecondaryBackgroundColor}">
-                                <StackLayout Spacing="5">
-                                    <Label Style="{StaticResource ControlTitleLabelStyle}"
-                                           Text="{x:Static i18n:AppResources.LabelName}" />
-
-                                    <Label FontSize="{StaticResource LargeFontSize}"
-                                           Style="{StaticResource ControlTitleLabelStyle}"
-                                           Text="{Binding Name}"
-                                           TextColor="{StaticResource PrimaryColor1}" />
-                                </StackLayout>
-
-                                <StackLayout Spacing="5">
-                                    <Label Style="{StaticResource ControlTitleLabelStyle}"
-                                           Text="{x:Static i18n:AppResources.LabelAddress}" />
-
-                                    <Label FontSize="{StaticResource LargeFontSize}"
-                                           MaxLines="1"
-                                           Style="{StaticResource ControlTitleLabelStyle}"
-                                           Text="{Binding Address}"
-                                           TextColor="{StaticResource PrimaryColor1}" />
-                                </StackLayout>
-
                                 <Grid ColumnDefinitions="*,*"
                                       ColumnSpacing="5">
                                     <StackLayout Spacing="5">
                                         <Label Style="{StaticResource ControlTitleLabelStyle}"
-                                               Text="{x:Static i18n:AppResources.LabelContactNumber}" />
+                                               Text="{x:Static i18n:AppResources.LabelPurchaseOrderNo}" />
 
                                         <Label FontSize="{StaticResource LargeFontSize}"
-                                               MaxLines="1"
                                                Style="{StaticResource ControlTitleLabelStyle}"
-                                               Text="{Binding ContactNumber}"
+                                               Text="{Binding PurchaseOrderNo}"
                                                TextColor="{StaticResource PrimaryColor1}" />
                                     </StackLayout>
 
                                     <StackLayout Grid.Column="1"
                                                  Spacing="5">
                                         <Label Style="{StaticResource ControlTitleLabelStyle}"
-                                               Text="{x:Static i18n:AppResources.LabelEmailAddress}" />
+                                               Text="{x:Static i18n:AppResources.LabelPurchaseOrderStatus}" />
 
                                         <Label FontSize="{StaticResource LargeFontSize}"
                                                MaxLines="1"
                                                Style="{StaticResource ControlTitleLabelStyle}"
-                                               Text="{Binding Email}"
+                                               Text="{Binding PurchaseOrderStatus}"
                                                TextColor="{StaticResource PrimaryColor1}" />
                                     </StackLayout>
                                 </Grid>
 
+                                <Grid ColumnDefinitions="*,*"
+                                      ColumnSpacing="5">
+                                    <StackLayout Spacing="5">
+                                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                                               Text="{x:Static i18n:AppResources.LabelDateRequested}" />
+
+                                        <Label FontSize="{StaticResource LargeFontSize}"
+                                               MaxLines="1"
+                                               Style="{StaticResource ControlTitleLabelStyle}"
+                                               Text="{Binding DateRequestedDisplay}"
+                                               TextColor="{StaticResource PrimaryColor1}" />
+                                    </StackLayout>
+
+                                    <StackLayout Grid.Column="1"
+                                                 Spacing="5">
+                                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                                               Text="{x:Static i18n:AppResources.LabelTotalAmount}" />
+
+                                        <Label FontSize="{StaticResource LargeFontSize}"
+                                               MaxLines="1"
+                                               Style="{StaticResource ControlTitleLabelStyle}"
+                                               Text="{Binding TotalAmount}"
+                                               TextColor="{StaticResource PrimaryColor1}" />
+                                    </StackLayout>
+                                </Grid>
+
+                                <StackLayout Spacing="5">
+                                    <Label Style="{StaticResource ControlTitleLabelStyle}"
+                                           Text="{x:Static i18n:AppResources.LabelCustomerName}" />
+
+                                    <Label FontSize="{StaticResource LargeFontSize}"
+                                           MaxLines="1"
+                                           Style="{StaticResource ControlTitleLabelStyle}"
+                                           Text="{Binding CustomerName}"
+                                           TextColor="{StaticResource PrimaryColor1}" />
+                                </StackLayout>
 
 
                             </StackLayout>

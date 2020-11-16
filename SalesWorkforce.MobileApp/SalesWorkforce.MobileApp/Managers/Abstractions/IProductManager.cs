@@ -7,7 +7,7 @@ namespace SalesWorkforce.MobileApp.Managers.Abstractions
     public interface IProductManager
     {
         Task GetProducts();
-        List<ProductEntity> GetCustomersLocally();
+        List<ProductEntity> GetProductsLocally();
         Task<ProductEntity> GetProduct(long recordId);
     }
 }

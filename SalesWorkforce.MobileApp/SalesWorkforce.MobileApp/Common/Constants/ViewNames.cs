@@ -11,6 +11,7 @@
         public const string CustomersPage = nameof(CustomersPage);
         public const string CustomerCreatePage = nameof(CustomerCreatePage);
         public const string PurchaseOrdersPage = nameof(PurchaseOrdersPage);
+        public const string PurchaseOrderCreatePage = nameof(PurchaseOrderCreatePage);
 
         public static string GetMainMasterPage()
         {
