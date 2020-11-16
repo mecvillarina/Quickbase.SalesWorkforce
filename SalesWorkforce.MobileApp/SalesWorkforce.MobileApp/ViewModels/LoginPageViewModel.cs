@@ -9,11 +9,14 @@ using Prism.Commands;
 using Prism.Navigation;
 using System;
 using System.Threading.Tasks;
+using Plugin.AzurePushNotification;
+using System.Collections.Generic;
 
 namespace SalesWorkforce.MobileApp.ViewModels
 {
     public class LoginPageViewModel : ViewModelBase
     {
+        private readonly IAzurePushNotification _azurePushNotification;
         private readonly IAuthManager _authManager;
         private readonly IAppUserManager _appUserManager;
 
@@ -21,9 +24,11 @@ namespace SalesWorkforce.MobileApp.ViewModels
             ILogger logger,
             IUserDialogs userDialogs,
             IRequestExceptionHandler requestExceptionHandler,
+            IAzurePushNotification azurePushNotification,
             IAuthManager authManager,
             IAppUserManager appUserManager) : base(pageNavigator, logger, userDialogs, requestExceptionHandler)
         {
+            _azurePushNotification = azurePushNotification;
             _authManager = authManager;
             _appUserManager = appUserManager;
 
@@ -68,6 +73,13 @@ namespace SalesWorkforce.MobileApp.ViewModels
                 await RequestExceptionHandler.HandlerRequestTaskAsync(() => _authManager.Login(req));
                 await RequestExceptionHandler.HandlerRequestTaskAsync(() => _appUserManager.GetProfile());
 
+                var profile = _appUserManager.GetProfileLocally();
+
+                List<string> tags = new List<string>();
+                tags.Add(profile.RecordId.ToString());
+
+                _azurePushNotification.RegisterForPushNotifications();
+                await _azurePushNotification.RegisterAsync(tags.ToArray());
                 await PageNavigator.NavigateAsync($"../{ViewNames.GetMainMasterPage()}");
             }
             catch (NoInternetConnectivityException)

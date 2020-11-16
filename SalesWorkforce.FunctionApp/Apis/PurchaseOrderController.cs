@@ -10,6 +10,7 @@ using SalesWorkforce.FunctionApp.Providers;
 using SalesWorkforce.FunctionApp.Providers.Abstractions;
 using SalesWorkforce.FunctionApp.Services.Abstractions;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -18,11 +19,15 @@ namespace SalesWorkforce.FunctionApp.Apis
     public class PurchaseOrderController : AuthorizeMobileControllerBase
     {
         private readonly IPurchaseOrderService _purchaseOrderService;
+        private readonly INotificationService _notificationService;
+
         public PurchaseOrderController(ISalesAgentService salesAgentService,
             IAccessTokenProvider accessTokenProvider,
-            IPurchaseOrderService purchaseOrderService) : base(salesAgentService, accessTokenProvider)
+            IPurchaseOrderService purchaseOrderService,
+            INotificationService notificationService) : base(salesAgentService, accessTokenProvider)
         {
             _purchaseOrderService = purchaseOrderService;
+            _notificationService = notificationService;
         }
 
         [FunctionName("PurchaseOrderGetAll")]
@@ -100,6 +105,21 @@ namespace SalesWorkforce.FunctionApp.Apis
                 }
 
                 return new BadRequestObjectResult(new BadRequestResponseContract() { Message = "Purchase order was not created." });
+            }
+        }
+
+        [FunctionName("PurchaseOrderNotify")]
+        public async Task<IActionResult> Notify([HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = "purchase-order/notify")] HttpRequest req, ILogger logger)
+        {
+            using (var streamReader = new StreamReader(req.Body))
+            {
+                string requestBody = await streamReader.ReadToEndAsync();
+                var contract = JsonConvert.DeserializeObject<PurchaseOrderStatusNotificationRequestContract>(requestBody);
+
+                string message = $"Your Purchase Order ({contract.PurchaseOrderNo}) status has been updated to {contract.Status}.";
+                _notificationService.SendNotification("Status Updated", message, new List<string>() { contract.SalesAgentId.ToString() }, logger);
+
+                return new OkResult();
             }
         }
     }

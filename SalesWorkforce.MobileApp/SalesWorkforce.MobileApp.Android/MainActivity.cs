@@ -1,7 +1,9 @@
 ﻿using Acr.UserDialogs;
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
+using Plugin.AzurePushNotification;
 using Prism;
 using Prism.Ioc;
 using SalesWorkforce.MobileApp.Droid.Database;
@@ -10,6 +12,8 @@ using SalesWorkforce.MobileApp.Repositories.Abstractions;
 namespace SalesWorkforce.MobileApp.Droid
 {
     [Activity(Theme = "@style/MainTheme",
+        ScreenOrientation = ScreenOrientation.Portrait,
+
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -29,6 +33,7 @@ namespace SalesWorkforce.MobileApp.Droid
             InitLibraries(savedInstanceState);
             InitializeContainer();
             LoadApplication(_app);
+            AzurePushNotificationManager.ProcessIntent(this, base.Intent);
         }
 
         private void InitLibraries(Bundle savedInstanceState)
@@ -47,6 +52,12 @@ namespace SalesWorkforce.MobileApp.Droid
             _app = new App(new AndroidInitializer());
         }
 
+        protected override void OnNewIntent(Intent intent)
+        {
+            base.OnNewIntent(intent);
+            AzurePushNotificationManager.ProcessIntent(this, intent);
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -59,7 +70,6 @@ namespace SalesWorkforce.MobileApp.Droid
     {
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // Register any platform specific implementations
             containerRegistry.RegisterSingleton<ISQLiteConnectionFactory, AndroidSqlite>();
         }
     }

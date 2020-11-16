@@ -1,27 +1,30 @@
 ﻿using Acr.UserDialogs;
-using SalesWorkforce.MobileApp.Common.Constants;
-using SalesWorkforce.MobileApp.Localization;
-using SalesWorkforce.MobileApp.Managers.Abstractions;
-using SalesWorkforce.MobileApp.Models;
-using SalesWorkforce.MobileApp.Utilities.Abstractions;
+using Plugin.AzurePushNotification;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Navigation;
+using SalesWorkforce.MobileApp.Common.Constants;
+using SalesWorkforce.MobileApp.Localization;
+using SalesWorkforce.MobileApp.Managers.Abstractions;
+using SalesWorkforce.MobileApp.Utilities.Abstractions;
 using System.Threading.Tasks;
 
 namespace SalesWorkforce.MobileApp.ViewModels
 {
     public class MainMasterDetailPageViewModel : MasterDetailViewModelBase
     {
+        private readonly IAzurePushNotification _azurePushNotification;
         private readonly IAppManager _appManager;
         private readonly IAppUserManager _appUserManager;
         public MainMasterDetailPageViewModel(INavigationService navigationService,
             IPageNavigator pageNavigator,
             IUserDialogs userDialogs,
             IEventAggregator eventAggregator,
+            IAzurePushNotification azurePushNotification,
             IAppManager appManager,
             IAppUserManager appUserManager) : base(navigationService, pageNavigator, userDialogs, eventAggregator)
         {
+            _azurePushNotification = azurePushNotification;
             _appManager = appManager;
             _appUserManager = appUserManager;
 
@@ -72,6 +75,7 @@ namespace SalesWorkforce.MobileApp.ViewModels
 
             if (logoutResult)
             {
+                await _azurePushNotification.UnregisterAsync();
                 _appManager.ClearAll();
                 await PageNavigator.NavigateAsync($"{ViewNames.ResetLandingPage()}");
             }

@@ -18,6 +18,7 @@ using SalesWorkforce.MobileApp.WebServices.Utilities;
 using SalesWorkforce.MobileApp.Managers.Mappers;
 using Acr.UserDialogs;
 using SalesWorkforce.MobileApp.Common.Constants;
+using Plugin.AzurePushNotification;
 
 namespace SalesWorkforce.MobileApp
 {
@@ -113,6 +114,8 @@ namespace SalesWorkforce.MobileApp
         private void RegisterPlugins(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterInstance(UserDialogs.Instance);
+            containerRegistry.RegisterInstance(CrossAzurePushNotification.Current);
+
         }
     }
 }
