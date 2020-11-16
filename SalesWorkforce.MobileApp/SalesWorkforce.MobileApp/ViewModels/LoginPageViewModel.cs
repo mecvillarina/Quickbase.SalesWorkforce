@@ -78,7 +78,7 @@ namespace SalesWorkforce.MobileApp.ViewModels
                 List<string> tags = new List<string>();
                 tags.Add(profile.RecordId.ToString());
 
-                _azurePushNotification.RegisterForPushNotifications();
+                //_azurePushNotification.RegisterForPushNotifications();
                 await _azurePushNotification.RegisterAsync(tags.ToArray());
                 await PageNavigator.NavigateAsync($"../{ViewNames.GetMainMasterPage()}");
             }

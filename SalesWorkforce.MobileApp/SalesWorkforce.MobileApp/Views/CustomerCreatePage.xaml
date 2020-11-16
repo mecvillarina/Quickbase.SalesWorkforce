@@ -68,7 +68,7 @@
 
                         <StackLayout Spacing="5">
                             <Label Style="{StaticResource ControlTitleTextColor}"
-                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+                                   Text="{x:Static i18n:AppResources.LabelContactNumber}" />
 
                             <Entry Keyboard="Telephone"
                                    Text="{Binding ContactNumber}">
@@ -80,7 +80,7 @@
 
                         <StackLayout Spacing="5">
                             <Label Style="{StaticResource ControlTitleTextColor}"
-                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+                                   Text="{x:Static i18n:AppResources.LabelEmailAddress}" />
 
                             <Entry Keyboard="Email"
                                    Text="{Binding EmailAddress}">
@@ -92,7 +92,7 @@
 
                         <StackLayout Spacing="5">
                             <Label Style="{StaticResource ControlTitleTextColor}"
-                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+                                   Text="Billing Address" />
 
                             <Entry Text="{Binding BillingAddress}">
                                 <Entry.Effects>
@@ -103,7 +103,7 @@
 
                         <StackLayout Spacing="5">
                             <Label Style="{StaticResource ControlTitleTextColor}"
-                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+                                   Text="Delivery Address" />
 
                             <Entry Text="{Binding DeliveryAddress}">
                                 <Entry.Effects>
