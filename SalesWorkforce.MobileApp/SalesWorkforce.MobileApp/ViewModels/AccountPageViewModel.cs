@@ -50,11 +50,18 @@ namespace SalesWorkforce.MobileApp.ViewModels
             set => SetProperty(ref _lastName, value);
         }
 
-        private string _employeeId;
-        public string EmployeeId
+        private string _agentId;
+        public string AgentId
         {
-            get => _employeeId;
-            set => SetProperty(ref _employeeId, value);
+            get => _agentId;
+            set => SetProperty(ref _agentId, value);
+        }
+
+        private string _emailAddress;
+        public string EmailAddress
+        {
+            get => _emailAddress;
+            set => SetProperty(ref _emailAddress, value);
         }
 
         private string _attendanceType;
@@ -72,8 +79,8 @@ namespace SalesWorkforce.MobileApp.ViewModels
             FirstName = profile.FirstName;
             MiddleName = profile.MiddleName;
             LastName = profile.LastName;
-            //EmployeeId = profile.EmployeeID;
-            //AttendanceType = profile.UseGeofencing ? AppResources.LabelGeofencing : AppResources.LabelGeotagging;
+            AgentId = profile.AgentId;
+            EmailAddress = profile.EmailAddress;
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)

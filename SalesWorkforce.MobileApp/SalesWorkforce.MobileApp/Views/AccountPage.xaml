@@ -56,6 +56,16 @@
                                Text="{Binding AgentId}"
                                TextColor="{StaticResource PrimaryColor1}" />
                     </StackLayout>
+
+                    <StackLayout Spacing="5">
+                        <Label Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{x:Static i18n:AppResources.LabelEmailAddress}" />
+
+                        <Label FontSize="{StaticResource LargeFontSize}"
+                               Style="{StaticResource ControlTitleLabelStyle}"
+                               Text="{Binding EmailAddress}"
+                               TextColor="{StaticResource PrimaryColor1}" />
+                    </StackLayout>
                 </StackLayout>
             </ScrollView>
         </Grid>
