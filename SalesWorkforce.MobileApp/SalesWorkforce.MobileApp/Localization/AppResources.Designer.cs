@@ -61,6 +61,15 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add.
+        /// </summary>
+        public static string ButtonAdd {
+            get {
+                return ResourceManager.GetString("ButtonAdd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string ButtonLogin {
@@ -160,6 +169,15 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        public static string LabelAddress {
+            get {
+                return ResourceManager.GetString("LabelAddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Agent ID.
         /// </summary>
         public static string LabelAgentId {
@@ -192,6 +210,15 @@ namespace SalesWorkforce.MobileApp.Localization {
         public static string LabelClockOut {
             get {
                 return ResourceManager.GetString("LabelClockOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Number.
+        /// </summary>
+        public static string LabelContactNumber {
+            get {
+                return ResourceManager.GetString("LabelContactNumber", resourceCulture);
             }
         }
         
@@ -295,6 +322,15 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string LabelName {
+            get {
+                return ResourceManager.GetString("LabelName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string LabelNo {
@@ -336,6 +372,15 @@ namespace SalesWorkforce.MobileApp.Localization {
         public static string LabelSignoutTitle {
             get {
                 return ResourceManager.GetString("LabelSignoutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You&apos;ve successfully created a customer profile..
+        /// </summary>
+        public static string LabelSuccessCreateCustomer {
+            get {
+                return ResourceManager.GetString("LabelSuccessCreateCustomer", resourceCulture);
             }
         }
         
@@ -421,11 +466,47 @@ namespace SalesWorkforce.MobileApp.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Customer.
+        /// </summary>
+        public static string TitleAddCustomer {
+            get {
+                return ResourceManager.GetString("TitleAddCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Attendance Logs.
         /// </summary>
         public static string TitleAttendanceLogs {
             get {
                 return ResourceManager.GetString("TitleAttendanceLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Purchase Order.
+        /// </summary>
+        public static string TitleCreatePurchaseOrder {
+            get {
+                return ResourceManager.GetString("TitleCreatePurchaseOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customers.
+        /// </summary>
+        public static string TitleCustomers {
+            get {
+                return ResourceManager.GetString("TitleCustomers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purchase Orders.
+        /// </summary>
+        public static string TitlePurchaseOrders {
+            get {
+                return ResourceManager.GetString("TitlePurchaseOrders", resourceCulture);
             }
         }
     }

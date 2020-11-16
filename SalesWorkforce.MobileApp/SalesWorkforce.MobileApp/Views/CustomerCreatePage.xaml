@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:MobileContentPageBase x:Class="SalesWorkforce.MobileApp.Views.CustomerCreatePage"
+                             xmlns="http://xamarin.com/schemas/2014/forms"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                             xmlns:effects="clr-namespace:SalesWorkforce.MobileApp.Effects"
+                             xmlns:i18n="clr-namespace:SalesWorkforce.MobileApp.Localization"
+                             xmlns:prism="http://prismlibrary.com"
+                             xmlns:views="clr-namespace:SalesWorkforce.MobileApp.Views"
+                             prism:ViewModelLocator.AutowireViewModel="True"
+                             BackgroundColor="{StaticResource SecondaryBackgroundColor}">
+    <views:MobileContentPageBase.Content>
+        <Grid RowDefinitions="Auto,*,Auto"
+              RowSpacing="0">
+
+            <Grid ColumnDefinitions="Auto,*"
+                  HorizontalOptions="FillAndExpand"
+                  Style="{StaticResource NavigationBarStyle}"
+                  VerticalOptions="FillAndExpand">
+
+                <Grid Padding="30,0,25,0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding BackCommand}"
+                                              NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+                    <Label FontFamily="FontAwesomeSolid"
+                           FontSize="{StaticResource MediumFontSize}"
+                           Text="{StaticResource IconArrowLeft}"
+                           TextColor="{StaticResource GrayDarkTextColor}"
+                           VerticalOptions="FillAndExpand"
+                           VerticalTextAlignment="Center" />
+                </Grid>
+
+                <Label Grid.Column="1"
+                       FontSize="{StaticResource MediumFontSize}"
+                       Text="{Binding Title}"
+                       TextColor="{StaticResource LightGrayTextColor}"
+                       TextTransform="Uppercase"
+                       VerticalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <ScrollView Margin="20,10"
+                            Padding="35,20"
+                            BackgroundColor="{StaticResource PrimaryBackgroundColor}">
+                    <StackLayout Spacing="10">
+                        <StackLayout Spacing="5">
+                            <Label Style="{StaticResource ControlTitleTextColor}"
+                                   Text="{x:Static i18n:AppResources.LabelName}" />
+
+                            <Entry Text="{Binding Name}">
+                                <Entry.Effects>
+                                    <effects:NoBorderEffect />
+                                </Entry.Effects>
+                            </Entry>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Style="{StaticResource ControlTitleTextColor}"
+                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+
+                            <Entry Text="{Binding Address}">
+                                <Entry.Effects>
+                                    <effects:NoBorderEffect />
+                                </Entry.Effects>
+                            </Entry>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Style="{StaticResource ControlTitleTextColor}"
+                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+
+                            <Entry Keyboard="Telephone"
+                                   Text="{Binding ContactNumber}">
+                                <Entry.Effects>
+                                    <effects:NoBorderEffect />
+                                </Entry.Effects>
+                            </Entry>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Style="{StaticResource ControlTitleTextColor}"
+                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+
+                            <Entry Keyboard="Email"
+                                   Text="{Binding EmailAddress}">
+                                <Entry.Effects>
+                                    <effects:NoBorderEffect />
+                                </Entry.Effects>
+                            </Entry>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Style="{StaticResource ControlTitleTextColor}"
+                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+
+                            <Entry Text="{Binding BillingAddress}">
+                                <Entry.Effects>
+                                    <effects:NoBorderEffect />
+                                </Entry.Effects>
+                            </Entry>
+                        </StackLayout>
+
+                        <StackLayout Spacing="5">
+                            <Label Style="{StaticResource ControlTitleTextColor}"
+                                   Text="{x:Static i18n:AppResources.LabelAddress}" />
+
+                            <Entry Text="{Binding DeliveryAddress}">
+                                <Entry.Effects>
+                                    <effects:NoBorderEffect />
+                                </Entry.Effects>
+                            </Entry>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </Grid>
+
+
+
+            <Grid Grid.Row="2"
+                  BackgroundColor="{StaticResource LightGrayColor}"
+                  HeightRequest="64">
+
+                <Grid.Triggers>
+                    <DataTrigger Binding="{Binding IsSubmitCommandEnabled}"
+                                 TargetType="Grid"
+                                 Value="False">
+                        <Setter Property="BackgroundColor" Value="{StaticResource LightGrayColor}" />
+                    </DataTrigger>
+
+                    <DataTrigger Binding="{Binding IsSubmitCommandEnabled}"
+                                 TargetType="Grid"
+                                 Value="True">
+                        <Setter Property="BackgroundColor" Value="{StaticResource AccentColor}" />
+                    </DataTrigger>
+
+                </Grid.Triggers>
+
+                <StackLayout Padding="30,0"
+                             HorizontalOptions="EndAndExpand"
+                             Orientation="Horizontal"
+                             Spacing="10"
+                             VerticalOptions="FillAndExpand">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SubmitCommand}"
+                                              NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Label FontSize="{StaticResource MediumFontSize}"
+                           Text="{x:Static i18n:AppResources.ButtonAdd}"
+                           TextColor="{StaticResource BaseButtonTextColor}"
+                           VerticalOptions="FillAndExpand"
+                           VerticalTextAlignment="Center" />
+
+                    <Label FontFamily="FontAwesomeSolid"
+                           FontSize="{StaticResource MediumFontSize}"
+                           Text="{StaticResource IconArrowRight}"
+                           TextColor="{StaticResource BaseButtonTextColor}"
+                           VerticalOptions="FillAndExpand"
+                           VerticalTextAlignment="Center" />
+                </StackLayout>
+            </Grid>
+
+        </Grid>
+    </views:MobileContentPageBase.Content>
+</views:MobileContentPageBase>

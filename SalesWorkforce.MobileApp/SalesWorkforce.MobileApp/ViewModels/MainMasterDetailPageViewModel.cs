@@ -26,7 +26,8 @@ namespace SalesWorkforce.MobileApp.ViewModels
             _appUserManager = appUserManager;
 
             AccountCommmand = new DelegateCommand(async () => await OnAccount());
-            AttendanceLogCommmand = new DelegateCommand(async () => await OnAttendanceLog());
+            CustomersCommand = new DelegateCommand(async () => await OnCustomers());
+            PurchaseOrdersCommand = new DelegateCommand(async () => await OnPurchaseOrders());
             LogoutCommand = new DelegateCommand(async () => await OnLogout());
         }
 
@@ -45,8 +46,9 @@ namespace SalesWorkforce.MobileApp.ViewModels
             set => SetProperty(ref _displayNameInitial, value);
         }
 
-        public DelegateCommand AttendanceLogCommmand { get; private set; }
         public DelegateCommand AccountCommmand { get; private set; }
+        public DelegateCommand CustomersCommand { get; private set; }
+        public DelegateCommand PurchaseOrdersCommand { get; private set; }
         public DelegateCommand LogoutCommand { get; private set; }
 
         public override void Initialize(INavigationParameters parameters)
@@ -59,7 +61,9 @@ namespace SalesWorkforce.MobileApp.ViewModels
 
         private Task OnAccount() => PageNavigator.NavigateAsync($"{ViewNames.NavigationPage}/{ViewNames.AccountPage}", null);
 
-        private Task OnAttendanceLog() => PageNavigator.NavigateAsync($"{ViewNames.NavigationPage}/{ViewNames.AttendanceLogPage}", null);
+        private Task OnCustomers() => PageNavigator.NavigateAsync($"{ViewNames.NavigationPage}/{ViewNames.CustomersPage}", null);
+
+        private Task OnPurchaseOrders() => PageNavigator.NavigateAsync($"{ViewNames.NavigationPage}/{ViewNames.PurchaseOrdersPage}", null);
 
         private async Task OnLogout()
         {

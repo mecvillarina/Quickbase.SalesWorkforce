@@ -50,7 +50,13 @@ namespace SalesWorkforce.MobileApp.Managers
         public List<CustomerEntity> GetCustomersLocally()
         {
             var dataObject = _customerRepository.ToList();
-            return Mapper.Map<List<CustomerEntity>>(dataObject);
+
+            if (dataObject != null)
+            {
+                return Mapper.Map<List<CustomerEntity>>(dataObject);
+            }
+
+            return new List<CustomerEntity>();
         }
 
         public async Task<CustomerEntity> GetCustomer(long recordId)

@@ -54,6 +54,64 @@
         </Grid>
     </ControlTemplate>
 
+    <ControlTemplate x:Key="MasterDetailPageAddControlTemplate">
+        <Grid BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+              ColumnSpacing="0"
+              RowDefinitions="Auto,*"
+              RowSpacing="0">
+
+            <Grid BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+                  ColumnDefinitions="Auto,*,Auto"
+                  Style="{StaticResource NavigationBarStyle}"
+                  VerticalOptions="StartAndExpand">
+
+                <Label Grid.Column="1"
+                       FontFamily="SourceSansProSemiBoldFontFamily"
+                       FontSize="{StaticResource LargeFontSize}"
+                       HorizontalOptions="CenterAndExpand"
+                       HorizontalTextAlignment="Center"
+                       Text="{TemplateBinding BindingContext.Title}"
+                       TextColor="{StaticResource BlackTextColor}"
+                       VerticalOptions="FillAndExpand"
+                       VerticalTextAlignment="Center" />
+
+                <Grid Padding="25,0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{TemplateBinding BindingContext.TappedMenuCommand}"
+                                              NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+
+                    <Label FontFamily="FontAwesomeSolid"
+                           FontSize="{StaticResource LargeFontSize}"
+                           Text="{StaticResource IconBar}"
+                           TextColor="{StaticResource PrimaryColor1}"
+                           VerticalOptions="FillAndExpand"
+                           VerticalTextAlignment="Center" />
+                </Grid>
+
+                <Grid Grid.Column="2"
+                      Padding="25,0">
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Command="{TemplateBinding BindingContext.AddCommand}"
+                                              NumberOfTapsRequired="1" />
+                    </Grid.GestureRecognizers>
+
+                    <Label FontFamily="FontAwesomeSolid"
+                           FontSize="{StaticResource LargeFontSize}"
+                           Text="{StaticResource IconPlus}"
+                           TextColor="{StaticResource PrimaryColor1}"
+                           VerticalOptions="FillAndExpand"
+                           VerticalTextAlignment="Center" />
+                </Grid>
+            </Grid>
+
+            <ContentPresenter Grid.Row="1"
+                              BackgroundColor="{StaticResource SecondaryBackgroundColor}"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand" />
+        </Grid>
+    </ControlTemplate>
+
     <Style TargetType="Button">
         <Setter Property="TextColor" Value="{DynamicResource BaseButtonTextColor}" />
         <Setter Property="FontSize" Value="{DynamicResource SmallFontSize}" />

@@ -19,6 +19,8 @@ namespace SalesWorkforce.MobileApp.Repositories.Database
             {
                 DB = connectionFactory.CreateConnection(DBName);
                 DB.CreateTable<AppUserDataObject>();
+                DB.CreateTable<CustomerDataObject>();
+                DB.CreateTable<ProductDataObject>();
             }
         }
 

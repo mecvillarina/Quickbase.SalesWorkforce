@@ -54,6 +54,8 @@ namespace SalesWorkforce.MobileApp
             containerRegistry.RegisterForNavigation<MainMasterDetailPage, MainMasterDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<AccountPage, AccountPageViewModel>();
+            containerRegistry.RegisterForNavigation<CustomersPage, CustomersPageViewModel>();
+            containerRegistry.RegisterForNavigation<CustomerCreatePage, CustomerCreatePageViewModel>();
         }
 
         private void RegisterManagers(IContainerRegistry containerRegistry)
