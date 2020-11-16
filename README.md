@@ -1,6 +1,13 @@
 # SalesWorkforce - (DevPost - QuickBase Hackathon 2020)
 
-This project contains a Forge app written in Typescript that extracts faces from an image and let us add some caption/description for each extracted image faces. Also, this only works on Confluence. This app uses a 3rd Party API. If you're interested to know what's behind the 3rd Party API, the project repository can be found [here](https://github.com/mecvillarina/forge-mecodes-face-ocr-api).
+## Inspiration
+I have a friend named John, he is a sales agent, he enjoys to go to his clients’ place to offer some products and go to the office to process them. But due to global pandemic, John having a hard time to do that., because of that, John loses some sales and become depress. With that, SalesWorkforce App was built, and made it possible using QuickBase and Azure. 
+
+## What it does
+- Allows Sales Agents to create a customer profile
+- Allows Sales Agents to make a purchase order
+- Sales Agents can receive status notification about their purchase order
+- All data is stored on QuickBase.
 
 ## Projects
 
