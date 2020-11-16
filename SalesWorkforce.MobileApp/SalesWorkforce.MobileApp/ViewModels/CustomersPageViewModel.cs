@@ -1,12 +1,13 @@
 ﻿using Acr.UserDialogs;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Navigation;
 using SalesWorkforce.MobileApp.Common.Constants;
 using SalesWorkforce.MobileApp.Localization;
 using SalesWorkforce.MobileApp.Managers.Abstractions;
 using SalesWorkforce.MobileApp.Managers.Entities;
+using SalesWorkforce.MobileApp.PubSubEvents;
 using SalesWorkforce.MobileApp.Utilities.Abstractions;
-using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
@@ -19,7 +20,8 @@ namespace SalesWorkforce.MobileApp.ViewModels
             ILogger logger,
             IUserDialogs userDialogs,
             IRequestExceptionHandler requestExceptionHandler,
-            ICustomerManager customerManager) : base(pageNavigator, logger, userDialogs, requestExceptionHandler)
+            IEventAggregator eventAggregator,
+            ICustomerManager customerManager) : base(pageNavigator, logger, userDialogs, requestExceptionHandler, eventAggregator)
         {
             _customerManager = customerManager;
 
@@ -27,6 +29,7 @@ namespace SalesWorkforce.MobileApp.ViewModels
 
             Customers = new ObservableCollection<CustomerEntity>();
 
+            TappedMenuCommand = new DelegateCommand(() => EventAggregator.GetEvent<HamburgerTappedEvent>().Publish());
             AddCommand = new DelegateCommand(async () => await OnAdd());
         }
 
@@ -37,6 +40,7 @@ namespace SalesWorkforce.MobileApp.ViewModels
             set => SetProperty(ref _customers, value);
         }
 
+        public DelegateCommand TappedMenuCommand { get; private set; }
         public DelegateCommand AddCommand { get; private set; }
 
         private async Task OnAdd()
